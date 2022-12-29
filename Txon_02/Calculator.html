@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<script>
+
+    function clearScreen(){
+        document.getElementById('result').value = '';
+    }
+
+    function backspace()
+    {
+        var ele = document.getElementById('result').value;
+        document.getElementById('result').value = ele.substring(0, ele.length-1);
+    }
+
+    function screen(val){
+        document.getElementById('result').value += val;
+    }
+
+    function solve(){
+        let expression = document.getElementById('result').value;
+        let total = eval(expression);
+        document.getElementById('result').value = total;
+        return total;
+    }
+
+</script>
+<body>
+    
+<form name="calci">
+    <section style="height:70px; text-align:center; padding-top: 20px; color:white;">
+        <h2><b>Simple Calculator</b></h2>
+    </section>
+    <section>
+        <div>
+            <div class="keypad">
+                <div style="background-color: black; border-radius: 10px;">
+                    <input type="text" class="inpt" id="result"><b style="color: white;">
+                </div>
+                <div style="margin-top: 10px;">
+                    <input type="button" class="but" value="Clear" onclick="clearScreen()"></input>
+                    <input type="button" class="but" value="Back" onclick="backspace()"></input>
+                    <input type="button" class="buton" value="/" onClick="screen('/')"></input>
+                </div>
+                <div>
+                    <input type="button" class="buton" value="1" onClick="screen('1')"></input>
+                    <input type="button" class="buton" value="2" onClick="screen('2')"></input>
+                    <input type="button" class="buton" value="3" onClick="screen('3')"></input>
+                    <input type="button" class="buton" value="*" onClick="screen('*')"></input>
+                </div>
+                <div>
+                    <input type="button" class="buton" value="4" onClick="screen('4')"></input>
+                    <input type="button" class="buton" value="5" onClick="screen('5')"></input>
+                    <input type="button" class="buton" value="6" onClick="screen('6')"></input>
+                    <input type="button" class="buton" value="-" onClick="screen('-')"></input>
+                </div>
+                <div>
+                    <input type="button" class="buton" value="7" onClick="screen('7')"></input>
+                    <input type="button" class="buton" value="8" onClick="screen('8')"></input>
+                    <input type="button" class="buton" value="9" onClick="screen('9')"></input>
+                    <input type="button" class="buton" value="+" onClick="screen('+')"></input>
+                </div>
+                <div>
+                    <input type="button" class="buton" value="." onClick="screen('.')" style="font-weight: bolder;">.</input>
+                    <input type="button" class="buton" value="0" onClick="screen('0')"></input>
+                    <input type="button" class="buton" value="#"></input>
+                    <input type="button" class="buton" value="=" onClick="solve()"></input>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="ToDoList.js"></script>
+	<title>To Do List</title>
+  <link rel="stylesheet" href="ToDoList.css">
+</head>
+
+<body style="background-color: aqua;">
+	<header class="text-white p-5" style="background-color:rgb(181, 181, 171);">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+          <h1 class="heading">To Do List</h1>
+        </div>
+			</div>
+		</div>
+	</header>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6">
+        <form id="addForm">
+          <h2 class="sub-heading">Add Items</h2>
+          <label id="lblsuccess" class="text-success" style="display: none;"></label>
+          <input type="text" onkeyup="toggleButton(this, 'submit')"	class="form" id="item">
+          <input type="submit" class="btn btn-dark"	id="submit" value="Submit" disabled >
+        </form>
+      </div>
+      
+		  <div class="col-lg-6">
+  		  <h3 class="sub-heading">Tasks</h3>
+  		  <form id="addForm" style="margin-top:50px">
+	  		  <ul class="list-group" id="items"></ul>
+		    </form>
+      </div>
+
+    </div>
+	</div>
+
+</body>
+</html>
